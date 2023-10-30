@@ -3,9 +3,8 @@
 
 # User-specific stuff
 .idea/
+.idea
 
-# Mongo Explorer plugin
-.idea/**/mongoSettings.xml
 
 # File-based project format
 *.iws

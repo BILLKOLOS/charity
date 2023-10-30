@@ -16,7 +16,7 @@ getAccessToken = (req, res, next) => {
 		.get(mpesaConfig.auth_url, { headers: headers })
 		.then(response => {
 			const data = response.data;
-			console.log(data)
+			// console.log(data)
 			// const { amount, partyA, phoneNumber} = req.body
 			
 			// Object.assign(req, { amount, partyA, phoneNumber })
@@ -35,7 +35,8 @@ getAccessToken = (req, res, next) => {
 
 lipaNaMpesa = async (req, res) => {
 	let token = req.token;
-	const { amount, partyA, phoneNumber} = req.body
+	const { amount, partyA, phoneNumber } = req.body
+	// console.log( req.amount, partyA, req.body.phoneNumber)
 	
 	let auth = `Bearer ${token}`;
 	
@@ -66,6 +67,7 @@ lipaNaMpesa = async (req, res) => {
 		
 	}
 	catch (err) {
+		console.log(err)
 		const errorMessage = err.response ? err.response.statusText : 'An error occurred';
 		return res.send({
 			success: false,

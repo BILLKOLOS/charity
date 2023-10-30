@@ -73,10 +73,6 @@ module.exports = (sequelize, Sequelize) => {
 			type: Sequelize.STRING,
 			allowNull: false,
 		},
-		name: {
-			type: Sequelize.STRING,
-			allowNull: false,
-		},
 		amount: {
 			type: Sequelize.INTEGER,
 			allowNull: false,
