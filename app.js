@@ -36,7 +36,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 require('./routes')(app)
 
 // set port, listen for requests
-const PORT = process.env.PORT || 300;
+const PORT = process.env.PORT || 3000;
 
 // app listen port
 app.listen(PORT, () => {
