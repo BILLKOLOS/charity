@@ -18,12 +18,6 @@ let corsOptions = {
 
 const db = require("./models");
 
-//SyncDb
-db.syncDb(false).then(() => {
-  // db.initiateRoles(db.Role)
-  console.log('Database Synchronized!')
-} )
-
 app.use(cors(corsOptions));
 
 // parse requests of content-type - application/json
@@ -36,7 +30,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 require('./routes')(app)
 
 // set port, listen for requests
-const PORT = process.env.PORT || 3000;
+const PORT = 8000;
 
 // app listen port
 app.listen(PORT, () => {
