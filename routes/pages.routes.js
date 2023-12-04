@@ -37,10 +37,10 @@ module.exports = function(app) {
 		res.render('pages/contact', { current })
 	})
 	
-	app.get('/donate', (req, res) => {
-		const current = req.url; // Get the current URL
-		res.render('pages/donate', { current })
-	})
+	// app.get('/donate', (req, res) => {
+	// 	const current = req.url; // Get the current URL
+	// 	res.render('pages/donate', { current })
+	// })
 	
 	app.get('/event', (req, res) => {
 		const current = req.url; // Get the current URL
