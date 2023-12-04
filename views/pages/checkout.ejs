@@ -53,6 +53,7 @@
   h1,
   p#result-message {
     color: #404040;
+    text-align: center;
   }
   #paypal-button-container {
     /* border: 1px solid #808080;*/
@@ -62,6 +63,21 @@
     flex-flow: column;
     align-items: center;
     justify-content: center;
+  }
+  @media screen and (max-width: 500px){
+    main.main{
+      background-color: #ffffff99;
+      padding: 20px;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 90%;
+      border-radius: 25px;
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+    }
   }
 </style>
 <body>
