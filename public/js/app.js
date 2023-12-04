@@ -2,6 +2,26 @@ window.paypal
 	.Buttons({
 		async createOrder() {
 			try {
+				let amount;
+				const amountText = document.querySelector('input#amount').value
+				if (amountText){
+					try {
+						amount = parseInt(amountText)
+					} catch (error) {
+						return
+					}
+					if (isNaN(amount)) {
+						amount = 5
+					}
+				}
+				else {
+					amount = 5
+				}
+
+				// console.log(typeof(amount));
+
+
+				// console.log(amount)
 				const response = await fetch("/api/orders", {
 					method: "POST",
 					headers: {
@@ -12,8 +32,8 @@ window.paypal
 					body: JSON.stringify({
 						cart: [
 							{
-								id: "1455",
-								quantity: "10",
+								id: "1",
+								amount: amount,
 							},
 						],
 					}),

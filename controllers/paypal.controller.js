@@ -40,7 +40,7 @@ const createOrder = async (cart) => {
 	// use the cart information passed from the front-end to calculate the purchase unit details
 	console.log(
 		"shopping cart information passed from the frontend createOrder() callback:",
-		cart,
+		cart[0],
 	);
 	
 	const accessToken = await generateAccessToken();
@@ -51,7 +51,7 @@ const createOrder = async (cart) => {
 			{
 				amount: {
 					currency_code: "USD",
-					value: "100.00",
+					value: cart[0].amount,
 				},
 			},
 		],

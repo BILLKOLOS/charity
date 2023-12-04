@@ -31,7 +31,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 require('./routes')(app)
 
 // set port, listen for requests
-const PORT = 8000;
+const PORT = 8001;
 
 // app listen port
 app.listen(PORT, () => {
