@@ -12,6 +12,7 @@ app.use(express.static('public'))
 app.set('view engine', 'ejs')
 app.set('views', __dirname+'/views')
 
+
 let corsOptions = {
   origin: "http://localhost:${process.env.PORT}"
 };
