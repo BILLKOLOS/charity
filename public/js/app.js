@@ -53,7 +53,7 @@ window.paypal
 				}
 			} catch (error) {
 				console.error(error);
-				resultMessage(`Could not initiate PayPal Checkout...<br><br>${error}`);
+				resultMessage(`Could not initiate PayPal Checkout...<br><br>`);
 			}
 		},
 		async onApprove(data, actions) {
@@ -89,7 +89,7 @@ window.paypal
 						orderData?.purchase_units?.[0]?.payments?.captures?.[0] ||
 						orderData?.purchase_units?.[0]?.payments?.authorizations?.[0];
 					resultMessage(
-						`Transaction ${transaction.status}: ${transaction.id}<br><br>See console for all available details`,
+						`Thank you, Transaction Proccesed successfully`,
 					);
 					console.log(
 						"Capture result",
@@ -100,7 +100,7 @@ window.paypal
 			} catch (error) {
 				console.error(error);
 				resultMessage(
-					`Sorry, your transaction could not be processed...<br><br>${error}`,
+					`Sorry, your transaction could not be processed...<br><br>`,
 				);
 			}
 		},
