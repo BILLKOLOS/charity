@@ -23,10 +23,13 @@ if (contactForm) {
       body: JSON.stringify({ name: name, email: email, subject: subject, text: message })
     };
 
+    contactForm.innerHTML = `
+      <h1 style="color:#404040">Message Sent successfully</h1>
+      <p style="color:#404040">We'll get in touch with you as soon as possible</p>
+    `
+
     const response = await fetch('/api/v1/contact/send', options);
     const data = await response.json();
-
-    console.log(data)
 
   })
 }
