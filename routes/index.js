@@ -7,6 +7,7 @@ const booking = require('./site.routes')
 const admin = require('../routes/admin.routes')
 const pages = require('../routes/pages.routes')
 const paypal = require('../routes/paypal.routes')
+const email = require('../routes/email.routes')
 
 const routes = app => {
 	pages(app);
@@ -16,6 +17,7 @@ const routes = app => {
 	booking(app);
 	admin(app);
 	paypal(app);
+	email(app);
 }
 
 module.exports = routes
