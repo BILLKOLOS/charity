@@ -1,4 +1,4 @@
-const contactForm = document.querySelector('contactForm')
+const contactForm = document.querySelector('#contactForm')
 
 if (contactForm) {
   const button = contactForm.querySelector('button#sendMessageButton')
@@ -10,16 +10,17 @@ if (contactForm) {
     let name = contactForm.querySelector('input#name').value
     let email = contactForm.querySelector('input#email').value
     let subject = contactForm.querySelector('input#subject').value
-    let message = contactForm.querySelector('input#message').value
+    let message = contactForm.querySelector('textarea#message').value
 
-    const body = `{"name":"${name}","email":"${email}", "subject":${subject}, "text": ${message}}`
+    // const body = `{"name":"${name}","email":"${email}", "subject":${subject}, "text": ${message}}`
+    // console.log(body)
 
     const options = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: body
+      body: JSON.stringify({ name: name, email: email, subject: subject, text: message })
     };
 
     const response = await fetch('/api/v1/contact/send', options);

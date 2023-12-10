@@ -14,7 +14,7 @@ const nodemailer = require('nodemailer');
 //   })
 // );
 
-const { EMAIL, EMAIL_PASSWORD } = process.env;
+const { EMAIL, EMAIL_PASSWORD, EMAIL_TO } = process.env;
 
 // Create a Nodemailer transporter using SMTP
 const transporter = nodemailer.createTransport({
@@ -40,8 +40,8 @@ const sendEmail = async (req, res) => {
 
     // Define the email options
     const mailOptions = {
-      from: 'isfescii@gmail.com',
-      to: 'kulturefemar@gmail.com',
+      from: EMAIL,
+      to: EMAIL_TO,
       subject,
       text,
     };
