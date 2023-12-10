@@ -65,4 +65,4 @@ const sendEmail = async (req, res) => {
   }
 };
 
-export default { sendEmail };
+module.exports = sendEmail;
